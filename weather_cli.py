@@ -13,3 +13,11 @@ while True:
     if city_name == "":
         city_name = DEFAULT_CITY
 
+    if is_valid_city_name(city_name):
+        city_name = city_name.replace("", "+")
+        link = "https://www.google.com/search?q=weather+" + city_name
+        webbrowser.open(link)
+        break
+    else:
+        print("Invalid input. Enter city name without numbers and special simbols.")
+        continue
