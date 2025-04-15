@@ -3,6 +3,10 @@ import webbrowser
 
 DEFAULT_CITY = "Belgrade"
 
+def is_valid_city_name(city):
+    words = city.split()
+    return all(word.isalpha() for word in words)
+
 while True:
     city_name = input("Enter city (press enter for Belgrade): ").lower().strip()
 
